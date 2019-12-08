@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NoteApp</string>
+    <string name="dot_html">&#8226;</string>
+    <string name="new_note_msg">New Note</string>
+</resources>

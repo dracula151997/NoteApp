@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="NoteListBinding">
+
+        <variable
+            name="note"
+            type="com.project.semicolon.noteapp.model.NoteResponse" />
+
+        <import type="com.project.semicolon.noteapp.utils.MethodHelper"/>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:foreground="?selectableItemBackground"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/timestamp"
+                android:text="@{note.formatDate()}"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_below="@id/timestamp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:textSize="20sp"
+                    android:text="@{MethodHelper.setHtmlText()}"
+                    android:textColor="@{MethodHelper.generateRandomColor()}" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:text="@{note.note}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
